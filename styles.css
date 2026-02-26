@@ -35,11 +35,6 @@ body {
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
-    transition: transform 0.25s ease;
-}
-
-.site-header.is-hidden {
-    transform: translateY(-100%);
 }
 
 .header-inner {
