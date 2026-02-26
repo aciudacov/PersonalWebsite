@@ -207,10 +207,18 @@
 
     <script>
         const header = document.getElementById("site-header");
+        const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
+        const sectionEntries = navLinks
+            .map((link) => {
+                const id = link.getAttribute("href").slice(1);
+                const section = document.getElementById(id);
+                return section ? { link, section } : null;
+            })
+            .filter(Boolean);
         let lastScrollY = window.scrollY;
+        let ticking = false;
 
-        function onScroll() {
-            const currentScrollY = window.scrollY;
+        function updateHeaderVisibility(currentScrollY) {
             const goingDown = currentScrollY > lastScrollY;
             const pastHeader = currentScrollY > header.offsetHeight;
 
@@ -219,11 +227,54 @@
             } else {
                 header.classList.remove("is-hidden");
             }
+        }
 
-            lastScrollY = currentScrollY;
+        function updateScrollSpy() {
+            if (!sectionEntries.length) {
+                return;
+            }
+
+            const marker = window.scrollY + header.offsetHeight + 24;
+            let activeEntry = sectionEntries[0];
+
+            for (const entry of sectionEntries) {
+                if (marker >= entry.section.offsetTop) {
+                    activeEntry = entry;
+                } else {
+                    break;
+                }
+            }
+
+            for (const entry of sectionEntries) {
+                const isActive = entry === activeEntry;
+                entry.link.classList.toggle("is-active", isActive);
+
+                if (isActive) {
+                    entry.link.setAttribute("aria-current", "location");
+                } else {
+                    entry.link.removeAttribute("aria-current");
+                }
+            }
+        }
+
+        function onScroll() {
+            if (ticking) {
+                return;
+            }
+
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                updateHeaderVisibility(currentScrollY);
+                updateScrollSpy();
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
         }
 
         window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", updateScrollSpy);
+        updateScrollSpy();
     </script>
 </body>
 
