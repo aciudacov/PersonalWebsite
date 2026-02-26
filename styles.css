@@ -291,7 +291,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 16px;
-    background-color: var(--work-card-bg);
+    background: linear-gradient(180deg, var(--work-card-bg) 0%, var(--surface-alt) 100%);
     box-shadow: var(--shadow-sm);
     transform: translateY(0);
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
@@ -413,6 +413,82 @@ body {
 .work-description-sample p {
     margin: 0;
     color: var(--desc-text);
+}
+
+.portfolio-list {
+    display: grid;
+    gap: 14px;
+}
+
+.portfolio-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(0);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+    transform: translateY(-6px);
+    border-color: var(--work-hover-border);
+    box-shadow: var(--work-hover-shadow);
+}
+
+.portfolio-project-name {
+    margin: 0 0 14px;
+    font-size: 1.08rem;
+    color: var(--text);
+}
+
+.portfolio-project-name strong {
+    font-weight: 700;
+}
+
+.portfolio-field {
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    background-color: var(--surface);
+}
+
+.portfolio-field-label {
+    margin: 0 0 6px;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.portfolio-field p:last-child {
+    margin: 0;
+    color: var(--section-text);
+    line-height: 1.55;
+}
+
+.portfolio-description-card {
+    margin-top: 14px;
+    border: 1px solid var(--desc-border);
+    border-radius: 10px;
+    padding: 20px;
+    background: linear-gradient(180deg, var(--desc-bg-start) 0%, var(--desc-bg-end) 100%);
+}
+
+.portfolio-description-card .portfolio-field-label {
+    margin-bottom: 10px;
+    color: var(--desc-text);
+    opacity: 0.86;
+}
+
+.portfolio-description-card p:last-child {
+    margin: 0;
+    color: var(--desc-text);
+    font-size: 1.02rem;
+    line-height: 1.72;
 }
 
 .site-footer {
