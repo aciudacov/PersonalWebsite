@@ -15,7 +15,9 @@
     --work-card-bg: #fcfcfc;
     --work-company-color: #3b3b3b;
     --work-hover-border: #c8c8c8;
-    --work-hover-shadow: 0 16px 32px rgba(20, 20, 20, 0.14), 0 8px 16px rgba(20, 20, 20, 0.08), 0 0 0 3px rgba(255, 255, 255, 0.9);
+    --hover-shadow-base: 0 6px 14px rgba(20, 20, 20, 0.08);
+    --hover-shadow-ring: 0 0 0 2px rgba(255, 255, 255, 0.8);
+    --hover-shadow-rgb: 20 20 20;
     --pill-base-border: #b7c9ea;
     --pill-base-bg: #dbe8ff;
     --pill-base-text: #233954;
@@ -53,7 +55,9 @@
     --work-card-bg: #1f2832;
     --work-company-color: #dce5ef;
     --work-hover-border: #4c5a6e;
-    --work-hover-shadow: 0 18px 34px rgba(0, 0, 0, 0.48), 0 10px 18px rgba(0, 0, 0, 0.32), 0 0 0 2px rgba(92, 118, 154, 0.35);
+    --hover-shadow-base: 0 8px 16px rgba(0, 0, 0, 0.28);
+    --hover-shadow-ring: 0 0 0 2px rgba(92, 118, 154, 0.34);
+    --hover-shadow-rgb: 0 0 0;
     --pill-base-border: #415a78;
     --pill-base-bg: #2a3a4e;
     --pill-base-text: #d9e6f5;
@@ -92,7 +96,9 @@
         --work-card-bg: #1f2832;
         --work-company-color: #dce5ef;
         --work-hover-border: #4c5a6e;
-        --work-hover-shadow: 0 18px 34px rgba(0, 0, 0, 0.48), 0 10px 18px rgba(0, 0, 0, 0.32), 0 0 0 2px rgba(92, 118, 154, 0.35);
+        --hover-shadow-base: 0 8px 16px rgba(0, 0, 0, 0.28);
+        --hover-shadow-ring: 0 0 0 2px rgba(92, 118, 154, 0.34);
+        --hover-shadow-rgb: 0 0 0;
         --pill-base-border: #415a78;
         --pill-base-bg: #2a3a4e;
         --pill-base-text: #d9e6f5;
@@ -293,15 +299,24 @@ body {
     padding: 16px;
     background: linear-gradient(180deg, var(--work-card-bg) 0%, var(--surface-alt) 100%);
     box-shadow: var(--shadow-sm);
-    transform: translateY(0);
+    --tilt-shadow-x: 0px;
+    --tilt-shadow-y: 16px;
+    --tilt-shadow-blur: 24px;
+    --tilt-shadow-spread: -10px;
+    --tilt-shadow-opacity: 0.16;
+    transform: perspective(1000px) translateY(var(--card-lift, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .work-item:hover,
 .work-item:focus-within {
-    transform: translateY(-6px);
+    --card-lift: -4px;
     border-color: var(--work-hover-border);
-    box-shadow: var(--work-hover-shadow);
+    box-shadow:
+        var(--hover-shadow-base),
+        var(--tilt-shadow-x) var(--tilt-shadow-y) var(--tilt-shadow-blur) var(--tilt-shadow-spread) rgb(var(--hover-shadow-rgb) / var(--tilt-shadow-opacity)),
+        var(--hover-shadow-ring);
 }
 
 .work-item h3 {
@@ -426,15 +441,24 @@ body {
     padding: 18px;
     background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
     box-shadow: var(--shadow-sm);
-    transform: translateY(0);
+    --tilt-shadow-x: 0px;
+    --tilt-shadow-y: 16px;
+    --tilt-shadow-blur: 24px;
+    --tilt-shadow-spread: -10px;
+    --tilt-shadow-opacity: 0.16;
+    transform: perspective(1000px) translateY(var(--card-lift, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .portfolio-card:hover,
 .portfolio-card:focus-within {
-    transform: translateY(-6px);
+    --card-lift: -4px;
     border-color: var(--work-hover-border);
-    box-shadow: var(--work-hover-shadow);
+    box-shadow:
+        var(--hover-shadow-base),
+        var(--tilt-shadow-x) var(--tilt-shadow-y) var(--tilt-shadow-blur) var(--tilt-shadow-spread) rgb(var(--hover-shadow-rgb) / var(--tilt-shadow-opacity)),
+        var(--hover-shadow-ring);
 }
 
 .portfolio-project-name {
