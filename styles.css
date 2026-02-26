@@ -7,6 +7,8 @@
     --border: #d5d5d5;
     --header-height: 64px;
     --content-width: 820px;
+    --shadow-sm: 0 2px 8px rgba(20, 20, 20, 0.06);
+    --shadow-md: 0 12px 28px rgba(20, 20, 20, 0.14), 0 6px 12px rgba(20, 20, 20, 0.08);
 }
 
 html {
@@ -125,12 +127,18 @@ body {
     padding: 16px;
     background-color: #fcfcfc;
     box-shadow: var(--shadow-sm);
-  transition: transform .15s ease, box-shadow .15s ease;
+    transform: translateY(0);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.work-item:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+.work-item:hover,
+.work-item:focus-within {
+    transform: translateY(-6px);
+    border-color: #c8c8c8;
+    box-shadow:
+        0 16px 32px rgba(20, 20, 20, 0.14),
+        0 8px 16px rgba(20, 20, 20, 0.08),
+        0 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
 .work-item h3 {
