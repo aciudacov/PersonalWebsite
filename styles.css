@@ -133,11 +133,21 @@ body {
     font-size: 1.1rem;
 }
 
+.work-company{
+  font-weight: 600;
+  color: #3b3b3b;
+}
+
 .work-company,
 .work-timeframe,
 .work-location {
     margin: 4px 0 0;
     color: var(--muted);
+}
+
+.work-timeframe,
+.work-location{
+  color: var(--muted);
 }
 
 .work-timeframe {
