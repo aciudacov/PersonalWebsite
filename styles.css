@@ -494,6 +494,10 @@ body {
     line-height: 1.55;
 }
 
+.portfolio-field .tech-stack {
+    margin-top: 8px;
+}
+
 .portfolio-description-card {
     margin-top: 14px;
     border: 1px solid var(--desc-border);
