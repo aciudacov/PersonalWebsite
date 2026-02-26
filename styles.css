@@ -188,6 +188,30 @@ body {
     border: 1px solid #b7c9ea;
     background-color: #dbe8ff;
     color: #233954;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tech-pill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 45%;
+    transform: translateX(-250%) skewX(-20deg);
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+    pointer-events: none;
+    transition: transform 0.38s ease;
+}
+
+.tech-pill:hover,
+.tech-pill:focus-visible {
+    border-color: rgba(34, 34, 34, 0.28);
+}
+
+.tech-pill:hover::before,
+.tech-pill:focus-visible::before {
+    transform: translateX(260%) skewX(-20deg);
 }
 
 .tech-pill:nth-child(3n) {
@@ -200,6 +224,13 @@ body {
     border-color: #b5cbb5;
     background-color: #dceddc;
     color: #244024;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-pill,
+    .tech-pill::before {
+        transition: none;
+    }
 }
 
 .work-description-sample {
