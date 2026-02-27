@@ -2,6 +2,7 @@ const header = document.getElementById("site-header");
 const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
 const themeToggle = document.getElementById("theme-toggle");
 const interactiveCards = Array.from(document.querySelectorAll(".work-item, .portfolio-card"));
+const skillsCloud = document.getElementById("skills-cloud");
 const sectionEntries = navLinks
     .map((link) => {
         const id = link.getAttribute("href").slice(1);
@@ -220,6 +221,44 @@ function resetCardTiltForReducedMotion() {
     }
 }
 
+function shuffleArray(items) {
+    const result = [...items];
+
+    for (let index = result.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+    }
+
+    return result;
+}
+
+function setupSkillsCloud() {
+    if (!skillsCloud) {
+        return;
+    }
+
+    const cloudPills = Array.from(skillsCloud.querySelectorAll(".skills-cloud-pill"));
+    if (!cloudPills.length) {
+        return;
+    }
+
+    const sizeLevels = [0.78, 0.9, 1.04, 1.22, 1.46, 1.78];
+    const weightLevels = [500, 540, 580, 630, 690, 760];
+    const randomizedPills = shuffleArray(cloudPills);
+
+    for (const pill of randomizedPills) {
+        const rawSize = Number.parseInt(pill.dataset.size ?? "3", 10);
+        const normalizedSize = Number.isFinite(rawSize) ? Math.min(6, Math.max(1, rawSize)) : 3;
+        const level = normalizedSize - 1;
+        const jitterY = Math.random() * 16 - 8;
+
+        pill.style.setProperty("--skill-size", `${sizeLevels[level].toFixed(2)}rem`);
+        pill.style.setProperty("--skill-weight", `${weightLevels[level]}`);
+        pill.style.setProperty("--cloud-offset-y", `${jitterY.toFixed(2)}px`);
+        skillsCloud.appendChild(pill);
+    }
+}
+
 window.addEventListener("scroll", onScroll, { passive: true });
 window.addEventListener("resize", updateScrollSpy);
 if (themeToggle) {
@@ -237,4 +276,5 @@ if (typeof reducedMotionMedia.addEventListener === "function") {
 }
 setupCardTilt();
 resetCardTiltForReducedMotion();
+setupSkillsCloud();
 updateScrollSpy();

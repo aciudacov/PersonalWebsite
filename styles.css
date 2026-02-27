@@ -519,6 +519,42 @@ body {
     line-height: 1.72;
 }
 
+.skills-intro {
+    margin-bottom: 14px;
+}
+
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px 12px;
+    min-height: 220px;
+    padding: 20px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
+    box-shadow: var(--shadow-sm);
+}
+
+.skills-cloud-pill {
+    --skill-size: 1rem;
+    --skill-weight: 500;
+    font-size: var(--skill-size);
+    font-weight: var(--skill-weight);
+    line-height: 1;
+    padding: 0.42em 0.78em;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    transform: translateY(var(--cloud-offset-y, 0px));
+    transition: transform 0.25s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.skills-cloud-pill::before {
+    display: none;
+}
+
 .site-footer {
     padding: 28px 20px;
     text-align: center;
