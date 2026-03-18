@@ -36,17 +36,16 @@
         <section id="about" class="section">
             <h2>About</h2>
             <p>
-                <b>I’m a full-stack developer with 9 years of commercial experience, including 2 years in manual QA and 7 years focused on backend development in the .NET ecosystem (Blazor, Entity Framework, SQL Server).</b>
+                <b>I’m a .NET-focused software developer with experience across backend engineering, QA, and modern web
+                    UI work.</b>
             </p>
             <p>
-                One of my achievements and big software development milestones is developing a Telegram bot that scans load boards and delivers
-                targeted notifications to users. This system features integrations with multiple
-                platforms, a fluent UI, caching, filtering algorithms, authentication, security
-                measures, analytics and browser automation, significantly improving users' efficiency and
-                decision-making.
+                One of my key projects is a loadboard monitoring system that aggregates multiple platforms and delivers
+                real-time alerts via Telegram. It includes browser automation, data aggregation, filtering logic, and a
+                web UI, and is used in production by 100+ users.
             </p>
             <p>
-                I try to optimize workflows with impactful, user-focused solutions. All my solutions target real world problems, not some vacuum of theoretical exercises.
+                I’m most motivated by products that improve real workflows and reduce manual effort.
             </p>
         </section>
 
@@ -56,7 +55,7 @@
                 <article class="work-item">
                     <h3>Senior .NET Developer</h3>
                     <p class="work-company">EBZ Group via Proxify</p>
-                    <p class="work-timeframe">Apr 2025 - Present (11 mos)</p>
+                    <p class="work-timeframe">Apr 2025 - Present (1 yr)</p>
                     <p class="work-location">Remote</p>
                     <div class="tech-stack">
                         <span class="tech-pill">Blazor</span>
@@ -69,11 +68,11 @@
                     </div>
                     <div class="work-description-sample">
                         <p>
-                            Software Developer at EBZ Group, contributing to the development of an internal
-                            microservices-based enterprise platform used to manage automotive assembly-line projects.
-                            Responsible for implementing new features, enhancing existing modules, fixing defects, and
-                            optimizing performance within a Blazor-based application supporting engineering and
-                            manufacturing workflows.
+                            Contributed to a microservices-based enterprise platform used to manage automotive
+                            assembly-line projects. Extended core UI infrastructure by building reusable components on
+                            top of DevExpress, including hierarchical data grids, synchronized grid state across
+                            multiple views, and a flexible filtering system. Focused on designing extensible components
+                            and optimizing performance to ensure responsive behavior in complex data-driven interfaces.
                         </p>
                     </div>
                 </article>
@@ -129,7 +128,10 @@
                     </div>
                     <div class="work-description-sample">
                         <p>
-                            Software Developer at Starlab (IT division of Starnet), working on internal CRM systems and microservices. Delivered new features and endpoints, resolved production issues, and developed an internal Blazor application for customer and service management, including payment handling and TV package administration.
+                            Software Developer at Starlab (IT division of Starnet), working on internal CRM systems and
+                            microservices. Delivered new features and endpoints, resolved production issues, and
+                            developed an internal Blazor application for customer and service management, including
+                            payment handling and TV package administration.
                         </p>
                     </div>
                 </article>
@@ -149,7 +151,9 @@
                     </div>
                     <div class="work-description-sample">
                         <p>
-                            Backend developer on an end-to-end retail platform (POS, kiosks, warehouse management), responsible for API development, bug fixing, and performance improvements across kiosk and warehouse application modules.
+                            Backend developer on an end-to-end retail platform (POS, kiosks, warehouse management),
+                            responsible for API development, bug fixing, and performance improvements across kiosk and
+                            warehouse application modules.
                         </p>
                     </div>
                 </article>
@@ -166,7 +170,14 @@
                     </div>
                     <div class="work-description-sample">
                         <p>
-                            Manual QA on two Raymond James initiatives: a database migration from SQL Server to Oracle and an internal web-based trading management platform. For the migration project, validated schema and data mapping accuracy using extensive SQL analysis (joins, transformations, cross-checks against mapping documentation) to ensure integrity and consistency post-migration. For the trading platform, verified business requirements and user stories end-to-end, executing functional, performance, and database-level checks, and proactively identifying edge cases and defects across complex trading workflows (orders, contracts, options/legs).
+                            Manual QA on two Raymond James initiatives: a database migration from SQL Server to Oracle
+                            and an internal web-based trading management platform. For the migration project, validated
+                            schema and data mapping accuracy using extensive SQL analysis (joins, transformations,
+                            cross-checks against mapping documentation) to ensure integrity and consistency
+                            post-migration. For the trading platform, verified business requirements and user stories
+                            end-to-end, executing functional, performance, and database-level checks, and proactively
+                            identifying edge cases and defects across complex trading workflows (orders, contracts,
+                            options/legs).
                         </p>
                     </div>
                 </article>
@@ -184,14 +195,15 @@
                     <div class="portfolio-field">
                         <p class="portfolio-field-label">Scope</p>
                         <p>
-                            Send load alerts to truck dispatchers with little to no latency
+                            Send load alerts to truck dispatchers at near real-time
                         </p>
                     </div>
 
                     <div class="portfolio-field">
                         <p class="portfolio-field-label">Architecture</p>
                         <p>
-                            .NET API as backend with puppeteer to retrieve platform tokens, UI served via Github Pages, Telegram bot as control
+                            .NET API as backend with puppeteer to retrieve platform tokens, UI served via Github Pages,
+                            Telegram bot as control
                         </p>
                     </div>
 
@@ -209,7 +221,24 @@
                     <div class="portfolio-description-card">
                         <p class="portfolio-field-label">Description</p>
                         <p>
-                            Truck driver dispatchers and the carhauling industry relies on multiple loadboards to find deals for their drivers. <b>The scope of this project is to allow users to create custom filters for load alerts and receive notifications in near real-time from multiple platforms instead of mundane separate search on every platform.</b> The system integrates with multiple load board platforms, utilizing puppeteer for token retrieval and a .NET API backend for processing and alert management. The user interface is served via GitHub Pages, while the Telegram bot provides an intuitive control mechanism for users to manage their alerts and preferences.
+                            I built a real-time load monitoring system for truck dispatchers that aggregates multiple
+                            loadboards and delivers filtered alerts via Telegram, removing the need to manually track
+                            several platforms.
+                        </p>
+                        <p>
+                            Since official APIs were limited or lacked search capabilities, I used the same internal
+                            endpoints as web clients and combined them with browser automation for authentication. The
+                            system polls platforms every 5–10 seconds and processes results through a filtering and
+                            deduplication pipeline based on user-defined criteria.
+                        </p>
+                        <p>
+                            The backend is implemented in .NET with caching and optimizations to reduce redundant
+                            processing while maintaining low-latency delivery. The product evolved from a command-based
+                            Telegram bot into a system with an additional web UI for improved usability.
+                        </p>
+                        <p>
+                            It runs across multiple instances and serves 100+ active users. I designed, built, and
+                            maintain the entire system end-to-end.
                         </p>
                     </div>
                 </article>
@@ -228,7 +257,8 @@
                     <div class="portfolio-field">
                         <p class="portfolio-field-label">Architecture</p>
                         <p>
-                            Blazor Hybrid app with multiple build targets (iOS, Android, Web, native Mac, native Windows) and .NET API as backend
+                            Blazor Hybrid app with multiple build targets (iOS, Android, Web, native Mac, native
+                            Windows) and .NET API as backend
                         </p>
                     </div>
 
@@ -248,7 +278,11 @@
                     <div class="portfolio-description-card">
                         <p class="portfolio-field-label">Description</p>
                         <p>
-                            This application is designed to streamline the process of generating Bills of Lading (BOLs) for truck drivers by utilizing the latest log data. It also relieves the drivers of excess information, so they only have the information they need at the right moment. The Blazor Hybrid solution was chosen deliberately to have a single codebase that would be compiled against all used platforms, allowing for a consistent UX across all platforms.
+                            This application is designed to streamline the process of generating Bills of Lading (BOLs)
+                            for truck drivers by utilizing the latest log data. It also relieves the drivers of excess
+                            information, so they only have the information they need at the right moment. The Blazor
+                            Hybrid solution was chosen deliberately to have a single codebase that would be compiled
+                            against all used platforms, allowing for a consistent UX across all platforms.
                         </p>
                     </div>
                 </article>
@@ -267,7 +301,8 @@
                     <div class="portfolio-field">
                         <p class="portfolio-field-label">Architecture</p>
                         <p>
-                            Blazor Hybrid app with multiple build targets (iOS, Android, Web, native Mac, native Windows) and .NET API as backend
+                            Blazor Hybrid app with multiple build targets (iOS, Android, Web, native Mac, native
+                            Windows) and .NET API as backend
                         </p>
                     </div>
 
@@ -288,7 +323,10 @@
                     <div class="portfolio-description-card">
                         <p class="portfolio-field-label">Description</p>
                         <p>
-                            This solution is purely a main/sub account asset management tool. It allows users to connect their main accounts and manage their sub-accounts in a single place, providing a unified interface for monitoring and controlling their cryptocurrency assets across Bybit and Binance.
+                            This solution is purely a main/sub account asset management tool. It allows users to connect
+                            their main accounts and manage their sub-accounts in a single place, providing a unified
+                            interface for monitoring and controlling their cryptocurrency assets across Bybit and
+                            Binance.
                         </p>
                     </div>
                 </article>
@@ -298,7 +336,8 @@
         <section id="skills" class="section">
             <h2>Skills</h2>
             <p class="skills-intro">
-                The bigger the pill, the more experience I have with that technology. If there is something missing - that means I haven't learned it yet.
+                The bigger the pill, the more experience I have with that technology. If there is something missing -
+                that means I haven't learned it yet.
             </p>
             <div id="skills-cloud" class="skills-cloud" aria-label="Skills cloud">
                 <span class="tech-pill skills-cloud-pill" data-size="6">.NET</span>
@@ -334,7 +373,10 @@
         <section id="contact" class="section">
             <h2>Contact</h2>
             <p>
-                For any inqueries or proposals, you can always send me an email to <a href="mailto:stauceni.android@gmail.com">stauceni.android@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/andrei-ciudacov-518b16179/" target="_blank" rel="noopener">LinkedIn</a>.
+                For any inquiries or proposals, you can always send me an email to <a
+                    href="mailto:stauceni.android@gmail.com">stauceni.android@gmail.com</a> or find me on <a
+                    href="https://www.linkedin.com/in/andrei-ciudacov-518b16179/" target="_blank"
+                    rel="noopener">LinkedIn</a>.
             </p>
         </section>
     </main>
