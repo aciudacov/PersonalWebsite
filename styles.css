@@ -177,6 +177,13 @@ body {
     gap: 12px;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
 .nav {
     display: flex;
     gap: 20px;
@@ -200,6 +207,36 @@ body {
     color: var(--text);
     background-color: var(--nav-active-bg);
     font-weight: 600;
+}
+
+.cv-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--pill-base-border);
+    background: linear-gradient(180deg, var(--pill-base-bg) 0%, var(--surface) 100%);
+    color: var(--pill-base-text);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cv-download:hover {
+    border-color: var(--pill-hover-border);
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+.cv-download:focus-visible {
+    outline: 2px solid var(--toggle-focus);
+    outline-offset: 2px;
 }
 
 .theme-switch {
@@ -581,6 +618,10 @@ body {
         gap: 8px;
     }
 
+    .header-actions {
+        gap: 8px;
+    }
+
     .nav {
         flex: 1;
         min-width: 0;
@@ -597,6 +638,12 @@ body {
     .nav a {
         white-space: nowrap;
         font-size: 0.86rem;
+    }
+
+    .cv-download {
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 0.8rem;
     }
 
     .theme-switch-text {
