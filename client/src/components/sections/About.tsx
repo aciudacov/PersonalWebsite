@@ -37,7 +37,7 @@ export function About() {
             >
               <h2 className="text-sm font-medium tracking-widest text-white/40 uppercase mb-4">Profile</h2>
               <h3 className="text-3xl md:text-5xl font-medium tracking-tight mb-8 text-white leading-tight">
-                Architecting <br className="hidden md:block"/>reliable backends.
+                Architecting <br className="hidden md:block"/>reliable backends and fancy UI.
               </h3>
             </motion.div>
           </div>
@@ -51,7 +51,7 @@ export function About() {
               className="space-y-6 text-white/70 text-lg font-light leading-relaxed mb-12"
             >
               <p>
-                I am a .NET backend developer focused on building distributed systems, data processing pipelines, and performance-critical applications. My experience spans across backend engineering, QA, and modern web UI work.
+                I am a .NET developer focused on building distributed systems, data processing pipelines, and performance-critical applications. My experience spans across backend engineering, QA, and modern web UI work.
               </p>
             </motion.div>
 

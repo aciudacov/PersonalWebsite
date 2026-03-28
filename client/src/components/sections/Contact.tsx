@@ -19,7 +19,7 @@ export function Contact() {
           </h3>
           
           <p className="text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            I'm open to remote backend .NET roles. Whether you have a specific system in mind or need help scaling your architecture, I'd love to discuss it.
+            I'm open to remote .NET roles. Whether you have a specific system in mind or need help scaling your architecture, I'd love to discuss it.
           </p>
           
           <a 
