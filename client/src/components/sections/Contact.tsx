@@ -36,7 +36,6 @@ export function Contact() {
         <div className="flex gap-6">
           <a href="mailto:stauceni.android@gmail.com" className="hover:text-white transition-colors">Email</a>
           <a href="https://linkedin.com/in/andrei-ciudacov-518b16179" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://aciudacov.github.io/PersonalWebsite" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Website</a>
         </div>
       </footer>
     </section>
