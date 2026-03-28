@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import heroBackground from "@/assets/images/hero-bg.png";
 
 export function Hero() {
   const cvUrl = `${import.meta.env.BASE_URL}cv.docx`;
@@ -7,11 +6,8 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBackground}
-          alt="Abstract Background" 
-          className="w-full h-full object-cover opacity-40"
-        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.14),_transparent_32%),radial-gradient(circle_at_80%_20%,_rgba(255,255,255,0.08),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.08),_transparent_45%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.05),_transparent_30%,_rgba(0,0,0,0.3)_70%,_rgba(0,0,0,0.7)_100%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background"></div>
       </div>
 
