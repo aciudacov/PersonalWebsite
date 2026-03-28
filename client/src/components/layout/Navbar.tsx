@@ -14,7 +14,7 @@ import {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
-  const cvUrl = `${import.meta.env.BASE_URL}cv.docx`;
+  const cvUrl = `${import.meta.env.BASE_URL}andrei_ciudacov_senior_dotnet_developer.pdf`;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 50);

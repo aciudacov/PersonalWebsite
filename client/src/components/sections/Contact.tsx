@@ -23,7 +23,7 @@ export function Contact() {
           </p>
           
           <a 
-            href="mailto:stauceni.android@gmail.com" 
+            href="mailto:andrei.ciudacov@proton.me" 
             className="inline-block px-10 py-5 bg-white text-black rounded-full font-medium tracking-wide text-lg hover:bg-white/90 hover:scale-105 transition-all duration-300"
           >
             Say Hello
@@ -34,7 +34,7 @@ export function Contact() {
       <footer className="relative z-10 container mx-auto px-6 md:px-12 mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
         <p>&copy; {new Date().getFullYear()} Andrei Ciudacov. All rights reserved.</p>
         <div className="flex gap-6">
-          <a href="mailto:stauceni.android@gmail.com" className="hover:text-white transition-colors">Email</a>
+          <a href="mailto:andrei.ciudacov@proton.me" className="hover:text-white transition-colors">Email</a>
           <a href="https://linkedin.com/in/andrei-ciudacov-518b16179" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
         </div>
       </footer>

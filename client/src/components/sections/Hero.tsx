@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export function Hero() {
-  const cvUrl = `${import.meta.env.BASE_URL}cv.docx`;
+  const cvUrl = `${import.meta.env.BASE_URL}andrei_ciudacov_senior_dotnet_developer.pdf`;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -18,7 +18,7 @@ export function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-xs font-medium tracking-wide text-white/80 uppercase"
         >
-          .NET Backend Developer
+          Senior .NET Backend Developer
         </motion.div>
         
         <motion.h1 
