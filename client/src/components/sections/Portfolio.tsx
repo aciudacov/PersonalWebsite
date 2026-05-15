@@ -336,7 +336,7 @@ export function Portfolio() {
               </motion.div>
 
               <DialogContent
-                className="max-h-[92vh] max-w-5xl overflow-y-auto overscroll-contain border-white/10 bg-background/95 p-0 text-white shadow-2xl backdrop-blur-xl sm:rounded-lg"
+                className="portfolio-dialog-content max-h-[92vh] max-w-5xl overflow-y-auto overscroll-contain border-white/10 bg-background/95 p-0 text-white shadow-2xl backdrop-blur-xl sm:rounded-lg"
                 data-lenis-prevent=""
                 data-lenis-prevent-wheel=""
               >
@@ -346,7 +346,7 @@ export function Portfolio() {
                       <CarouselContent>
                         {project.images.map((image) => (
                           <CarouselItem key={image.label}>
-                            <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]">
+                            <div className="relative z-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]">
                               <img
                                 src={image.src}
                                 alt={`${project.title} ${image.label}`}
@@ -366,8 +366,8 @@ export function Portfolio() {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious className="left-4 border-white/15 bg-black/65 text-white hover:bg-white hover:text-black disabled:opacity-30" />
-                      <CarouselNext className="right-4 border-white/15 bg-black/65 text-white hover:bg-white hover:text-black disabled:opacity-30" />
+                      <CarouselPrevious className="left-3 z-30 border-white/15 bg-black/70 text-white shadow-lg backdrop-blur-md hover:bg-white hover:text-black disabled:opacity-30 sm:left-4" />
+                      <CarouselNext className="right-3 z-30 border-white/15 bg-black/70 text-white shadow-lg backdrop-blur-md hover:bg-white hover:text-black disabled:opacity-30 sm:right-4" />
                     </Carousel>
                   </div>
 

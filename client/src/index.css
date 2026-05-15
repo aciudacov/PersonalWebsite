@@ -131,3 +131,36 @@
 html {
   scroll-behavior: smooth;
 }
+
+.portfolio-dialog-content > button {
+  z-index: 60;
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  background: rgba(5, 5, 7, 0.72);
+  color: rgba(255, 255, 255, 0.92);
+  opacity: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+}
+
+.portfolio-dialog-content > button:hover {
+  background: rgba(255, 255, 255, 0.94);
+  color: #050507;
+}
+
+.portfolio-dialog-content > button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .portfolio-dialog-content > button {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
